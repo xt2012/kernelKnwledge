@@ -1,7 +1,8 @@
 int VtoP( int VPageNo,int PO ){
 
     if (R[VPageNo]==0) PageFault(VPageNo);
-    return (PPN[VPageN] << p) | PO;
+    return (PPN[VPageN] << p) | PO; //shifting phys.page address by p (2^p) bits ( size of page ) to fit proper offset. (think of it perhaps the way it works with segmentation in x86, multiplying
+                                    //the segment selector by the size of the segment descriptor to get the proper address within the global GDT)
 }
 
 /*handle a missing page*/
